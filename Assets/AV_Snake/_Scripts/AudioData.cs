@@ -45,7 +45,7 @@ public class AudioData : MonoBehaviour
             }
 
             _audioSource.outputAudioMixerGroup = micMixerGroup;
-            _audioSource.clip = Microphone.Start(Microphone.devices[0], true, 10, AudioSettings.outputSampleRate);
+            _audioSource.clip = Microphone.Start(Microphone.devices[0], true, 1, AudioSettings.outputSampleRate);
             
             while((Microphone.GetPosition(Microphone.devices[0]) > 0f) == false) { }
             _audioSource.Play();
