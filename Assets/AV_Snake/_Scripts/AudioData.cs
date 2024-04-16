@@ -1,23 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 public class AudioData : MonoBehaviour
 {
+
+    
+    
     private const int NUM_BANDS = 8;
     private const int SAMPLES_COUNT = 512;
+
+    [SerializeField] private bool useMicro;
+    
     [SerializeField] private float[] freqBands;
-
     [SerializeField] private float[] samples;
-
     [SerializeField] private Transform bar;
     [SerializeField] private float amplifier = 10;
 
-    private List<Transform> bars = new List<Transform>();
+    [SerializeField] private AudioMixerGroup micMixerGroup;
 
+    private List<Transform> bars = new List<Transform>();
     private int _currentSample;
 
+    private AudioSource _audioSource;
 
 
 
@@ -25,13 +32,34 @@ public class AudioData : MonoBehaviour
     {
         samples = new float [SAMPLES_COUNT];
         freqBands = new float[NUM_BANDS];
+        _audioSource = GetComponent<AudioSource>();
+
+        if (useMicro)
+        {
+            _audioSource.playOnAwake = false;
+            _audioSource.Stop();
+
+            for (int i = 0; i < Microphone.devices.Length; i++)
+            {
+                Debug.Log(Microphone.devices[i]);
+            }
+
+            _audioSource.outputAudioMixerGroup = micMixerGroup;
+            _audioSource.clip = Microphone.Start(Microphone.devices[0], true, 10, AudioSettings.outputSampleRate);
+            
+            while((Microphone.GetPosition(Microphone.devices[0]) > 0f) == false) { }
+            _audioSource.Play();
+
+
+        }
+        
     }
 
     private void Update()
     {
         //AudioListener.GetOutputData(samples, 0);
 
-        AudioListener.GetSpectrumData(samples, 0, FFTWindow.BlackmanHarris);
+        _audioSource.GetSpectrumData(samples, 0, FFTWindow.BlackmanHarris);
         SetFrequencyBands();
     }
 

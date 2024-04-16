@@ -98,7 +98,6 @@ public class AVLineCharacter : MonoBehaviour
     {
         bool isMoved = Input.GetMouseButton(0);
         _distance = GetMinDistance(isMoved);
-        Debug.Log(_distance);
         
         if (Input.GetMouseButton(0))
         {

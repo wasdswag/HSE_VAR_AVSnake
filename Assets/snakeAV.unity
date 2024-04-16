@@ -691,10 +691,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cb689c7d6074409587a84f9d6db29fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useMicro: 1
   freqBands: []
   samples: []
   bar: {fileID: 1591216442}
   amplifier: 10
+  micMixerGroup: {fileID: 24300002, guid: c9f639392c702443c8f78c8104de0d2b, type: 2}
 --- !u!1 &1591216437
 GameObject:
   m_ObjectHideFlags: 0
