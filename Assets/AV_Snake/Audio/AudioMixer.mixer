@@ -1,0 +1,142 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AudioMixer
+  m_OutputGroup: {fileID: 0}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - 2cdc0230ab90a47d89b684a6b64d79ad
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 2cdc0230ab90a47d89b684a6b64d79ad
+  m_Children: []
+  m_Volume: e572aa557e43a40d582fdc060d1329c8
+  m_Pitch: a1e2c97705ea24efea5bb1f7680d4cfb
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  - {fileID: 2631871367197103522}
+  - {fileID: 4245384308657800654}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 471952ae2c6bf4c02a12dbb86b273f36
+  m_EffectName: Attenuation
+  m_MixLevel: a7ac75bd2a7024ad29117eed18ef4663
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: a6f6d270c87514b2b8fcd8afcd3d3a18
+  m_FloatValues:
+    81947bd14b24e4d2d8fc565857203ae2: 1.5
+    a1e2c97705ea24efea5bb1f7680d4cfb: 1
+  m_TransitionOverrides: {}
+--- !u!244 &2631871367197103522
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 3a43eb2bb47204bed9357a7b2520a76a
+  m_EffectName: SFX Reverb
+  m_MixLevel: 96ccbdf27c46649eb9c22bc0a170226d
+  m_Parameters:
+  - m_ParameterName: Dry Level
+    m_GUID: c90621ed6d27d4839bc51f6a25d85b7b
+  - m_ParameterName: Room
+    m_GUID: 6cf90c6e572c0440d9bd72d7a548b578
+  - m_ParameterName: Room HF
+    m_GUID: f0985596b1f46481b82ba71aea2850fd
+  - m_ParameterName: Decay Time
+    m_GUID: 90215aa6d302c41bb9d2c299ff70feb7
+  - m_ParameterName: Decay HF Ratio
+    m_GUID: 5b084b873af234b539c43e3d6fcdf6a1
+  - m_ParameterName: Reflections
+    m_GUID: 878b9ebe576ac4d38bdf99ae76e10690
+  - m_ParameterName: Reflect Delay
+    m_GUID: 76e4c2e237a334e928ee3d7d621a1d26
+  - m_ParameterName: Reverb
+    m_GUID: ba196c91ad0624bbe8caaf56ecc20d9c
+  - m_ParameterName: Reverb Delay
+    m_GUID: 30e4489c74c53417c8ce12ccef4c9201
+  - m_ParameterName: Diffusion
+    m_GUID: 6192ce77d941e482ca598f9fd4ab6514
+  - m_ParameterName: Density
+    m_GUID: a3e8779fcaa7a4f438d02a44b76ac413
+  - m_ParameterName: HF Reference
+    m_GUID: a6cb9a6f5934d4cca955a8bacc092d65
+  - m_ParameterName: Room LF
+    m_GUID: 86b44e67b4a7b46229f5062437cb0a71
+  - m_ParameterName: LF Reference
+    m_GUID: 32ca4bd2dd8924e1bacba22d86403687
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &4245384308657800654
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: bc16424574d01464f9b1b2279b4502f5
+  m_EffectName: Duck Volume
+  m_MixLevel: 5cf31d4aa8213470790c858cc0ffcfb1
+  m_Parameters:
+  - m_ParameterName: Threshold
+    m_GUID: ce89c9bb86e514a06beb34739ae37f89
+  - m_ParameterName: Ratio
+    m_GUID: 81947bd14b24e4d2d8fc565857203ae2
+  - m_ParameterName: Attack Time
+    m_GUID: c756aed42a10c4298ab9d2a307eef6b7
+  - m_ParameterName: Release Time
+    m_GUID: e778b2f69445e470abdf12c13da3ba1c
+  - m_ParameterName: Make-up Gain
+    m_GUID: 5e71fde3f000a487b8c213fcf9f5b6fe
+  - m_ParameterName: Knee
+    m_GUID: 424414997ffc247dfb9e3e62c82be32e
+  - m_ParameterName: Sidechain Mix
+    m_GUID: e402504537eae46979f5543d370643a5
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
